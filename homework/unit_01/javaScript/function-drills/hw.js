@@ -74,7 +74,7 @@ var wordsWithAtLeastFiveLetters = function(words){
 var allStartingWithA = function(words){
   // Your Code Here
   for (var i = 0; i < words.length; i++) {
-    if (words[i].uppercase.slice(0, 1) === "A") {
+    if (words[i].charAt(0).UpperCase === "A") {
       return true
     }
     else {
@@ -90,8 +90,16 @@ var allStartingWithA = function(words){
 //          (case-insensitive), `false` otherwise
 var anyStartingWithB = function(words){
   // Your Code Here
+  for (var i = 0; i < words.length; i++) {
+    if (words[i].charAt(0).UpperCase === "B") {
+      return true
+    }
+    else {
+      return false
+    }
+    return true
+  }
 };
-
 // #7
 // Input: a single word and a number (`n`)
 // Output: `true` if the word has at least some number (`n`) of vowels,
@@ -100,6 +108,17 @@ var anyStartingWithB = function(words){
 // Edge Case: If `n` is less than zero, return `null`.
 var hasAtLeastNVowels = function(word, n){
   // Your Code Here
+  if (n < 0) {
+    return null
+  }
+  var sumOfVowels = 0
+  for (var i = 0; i < word.length; i++) {
+    if (word.charAt(i).UpperCase === "A" || word.charAt(i).UpperCase === "E" || word.charAt(i).UpperCase === "I"
+    || word.charAt(i).UpperCase === "O" || word.charAt(i).UpperCase === "U") {
+     sumOfVowels++;
+    }
+  }
+  return sumOfVowels >= n
 };
 
 // #8
@@ -107,7 +126,21 @@ var hasAtLeastNVowels = function(word, n){
 // Output: an array of words from the original array that have at least two
 //          vowels
 var wordsWithAtLeastTwoVowels = function(words){
+  var correctWords = [];
   // Your Code Here
+  for (var j = 0; j < words.length; j++) {
+      var sumOfVowels = 0
+      var word = words[j]
+      for (var i = 0; i < word.length; i++) {
+        if (word.charAt(i).UpperCase === "A" || word.charAt(i).UpperCase === "E" || word.charAt(i).UpperCase === "I"
+        || word.charAt(i).UpperCase === "O" || word.charAt(i).UpperCase === "U") {
+         sumOfVowels++;
+        }
+        if (sumOfVowels >= 2) {
+          correctWords.push(word);
+        }
+      }
+  }
 };
 
 // #9
