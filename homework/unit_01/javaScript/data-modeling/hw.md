@@ -109,7 +109,7 @@ track of the time and temperature of the house that it monitors, and use that
 information to turn on and off different lights and adjust the thermostat up
 and down.
 
-> Answer here
+
 
 ### 4. Sneaker Store
 
