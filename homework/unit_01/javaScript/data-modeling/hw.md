@@ -109,7 +109,19 @@ track of the time and temperature of the house that it monitors, and use that
 information to turn on and off different lights and adjust the thermostat up
 and down.
 
+var lightsLivingRoom = {
+  roomName: "Living Room",
+  numberOfLightsOn: 6,
+  totalRoomLights: 12
+}
 
+var houseTemperature = {
+  temperature: 64
+  roomsWithLights: ["Living Room", "Bedroom", "Bathroom"]
+  totalLights: (lightsLivingRoom.numberOfLights + lightsBedroom.numberOfLights + lightsBathroom.numberOfLights)
+}
+
+You can use the data to see how many lights are in each room, and also what the total number of lights are per room. If it is too hot, we can see what how many lights are on in each room and adjust accordingly.
 
 ### 4. Sneaker Store
 
@@ -117,7 +129,23 @@ This app will allow customers to browse a list of products (sneakers, in this
 case), add those products to a cart, and save that cart as a past order once the
 purchase is complete.
 
-> Answer here
+var sneakers = {
+  sneakerName: "Jordan 3"
+  sneakerSize: 14
+  sneakerColor: red
+}
+
+var sneakerOrder= {
+  product: [sneakers],
+  amount: 1,
+}
+
+var pastOrders = {
+  orderInfo: [sneakerOrder],
+  dateOrderCompleted: undefined
+}
+
+Create an object for each item that will be part of an order. List the products and amounts as part of the orders object. Create a final object outlining the details of the order.
 
 ## Representing Abstractions in Code
 
@@ -173,7 +201,9 @@ var exampleLine = {
 
 What are some advantages and disadvantages of choosing these representations? Please give at least one example of each.
 
-> Answer here
+disadvantage= IT DOESNT DO WHAT IT IS SUPPOSED TOO. You need to store information about where the stop is located along the line, so it can calculate how far to go.
+
+advantage= Gives you a nice descriptions for riders to access if they do not know where they want to stop.
 
 ### 6. Doctor Appointment App
 
@@ -276,7 +306,7 @@ Under what circumstances might one representation be a better choice than the
 other? Are there any circumstances in which the other representation might be
 the better choice?
 
-> Answer here
+It just depends on who is utilizing the information... If a doctor wants to see a list  of patients for the day when he gets in, he should use the first method. If someone at the front desk is trying to find open appointment slots, regardless of doctor, they could use an iteration of option 2.
 
 ## Tying It Together
 
@@ -286,14 +316,27 @@ You've been tasked with building an in-browser tic-tac-toe game.
 
 a.  What are some possible entities that your application might use to model its
     data? Please pick at least two, with at least two properties apiece.
+user = username, password, preferred token, online records
 
-  > Answer here
+game = user1, user2, tokens, moves
+
 
 b.  How might those entities be represented in JavaScript code?
 
-  > Answer here
+user{
+  username: "bbeaver",
+  password: "/asdbqkwjeeQWE!@3",
+  preferredToken: "Triangle",
+  record: 22 + "-" + 16
+}
+
+game {
+  user1: ["bbeaver", "Triangle"]
+  user2: ["casd13", "Square"]
+  moves:
+}
 
 c.  Justify your choices in a) and b). Why these entities? Why these
     representations?
 
-  > Answer here
+I have no idea!!! I think having statistics on how a user has done (record), could feed into the matchmaking. You wouldnt want a player who is 0-16 playing against someone 22-2
