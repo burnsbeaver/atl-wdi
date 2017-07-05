@@ -88,6 +88,7 @@ var allStartingWithA = function(words){
 // Input: an array of words
 // Output: `true` if there are ANY words that start with the letter 'b'
 //          (case-insensitive), `false` otherwise
+
 var anyStartingWithB = function(words){
   // Your Code Here
   for (var i = 0; i < words.length; i++) {

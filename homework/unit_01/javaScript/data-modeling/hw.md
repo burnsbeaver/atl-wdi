@@ -60,13 +60,47 @@ track of whether tasks have been completed, it will also keep track of
 how long each task took to complete. Tasks can be grouped into 'projects' to
 keep them organized.
 
-> Answer here
+var task = {
+  name: createPublicFolder,
+  completed: True,
+  startDate: Jan 21st 2017, 18:31:22,
+  endDate: Jan 22nd 2017, 09:45:35
+}
+
+var Project = {
+  name: createGame,
+  completed: False,
+  startDate: Jan 20th 2017, 12:27:22,
+  endDate: undefined,
+  tasks: [createPublicFolder, createCSSFolder, createJavaScriptFolder, linkPages, etc...]
+}
+
+Created tasks objects that feed into the project array "tasks", allowing details to be held about every task and finding specifics on both the project and tasks within the project.
 
 ### 2. Photo Sharing App
 
 In this app, users can upload photos to their accounts and share them with others. These photos can be grouped into albums.
 
-> Answer here
+var album1 = {
+  name: springBreak2017,
+  description: "Spring break in the Bahamas"
+  photos: [photo1, photo2, photo3]
+}
+
+var photo1 = {
+  name: undefined,
+  dateTaken: Mar 23rd 2017, 15:22:32,
+  link: <URL>
+}
+
+var user1 = {
+  firstName: "Burns",
+  lastName: "Beaver"
+  email: "xxxyyyzzz@xyz.com"
+  albums: [album1, album2, album3]
+}
+
+Each photo rolls into an album array, and that album array rolls into that users profile.
 
 ### 3. Home Automation Manager
 
