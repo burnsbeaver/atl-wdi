@@ -21,5 +21,13 @@ var timerUI = {
   },
   drawCrawlers: function(timerValue){
     // Your Code Here
+    var timeLeft = 100 - timerValue
+    document.getElementsByClassName('crawler')[0].style.marginLeft = (timeLeft * 10) + 'px';
+    if (timerValue % 2 === 0) {
+      document.getElementsByClassName('crawler')[0].style.margintop = '10px';
+    }
+    else {
+      document.getElementsByClassName('crawler')[0].style.marginTop = '0px';
+    }
   }
 };
