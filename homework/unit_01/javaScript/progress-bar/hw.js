@@ -23,8 +23,8 @@ var timerUI = {
     // Your Code Here
     var timeLeft = 100 - timerValue
     document.getElementsByClassName('crawler')[0].style.marginLeft = (timeLeft * 10) + 'px';
-    if (timerValue % 2 === 0) {
-      document.getElementsByClassName('crawler')[0].style.margintop = '10px';
+    if (timerLeft % 2 === 0) {
+      document.getElementsByClassName('crawler')[0].style.marginTop = '10px';
     }
     else {
       document.getElementsByClassName('crawler')[0].style.marginTop = '0px';
