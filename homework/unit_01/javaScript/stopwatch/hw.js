@@ -74,7 +74,9 @@
   /// User Interface ///
   const ViewEngine = {
     updateTimeDisplay: function(mins, secs, millisecs){
-
+        $('#mins').html(ViewHelpers.zeroFill(mins, 2))
+        $('#secs').html(ViewHelpers.zeroFill(secs, 2))
+        $('#millisecs').html(ViewHelpers.zeroFill(millisecs, 2))
     },
     updateLapListDisplay: function(laps){
       // Your Code Here
@@ -83,8 +85,13 @@
   const ViewHelpers = {
     zeroFill: function(number, length){
       // turn number into string
-      var numToString = number.toString()
-
+      var numToString = number.toString();
+      var numberToZeros = length - numToString.length;
+      if (numberToZeros === 1) {
+        numToString = '0' + numToString;
+      }
+      if (numberToZeros === 2) {
+        numToString = '00' + numToString;
       }
     },
   };
@@ -92,19 +99,24 @@
   /// Top-Level Application Code ///
   const AppController = {
     handleClockTick: function(){
-      
+    ViewEngine.updateTimeDisplay(Stopwatch.mins, Stopwatch.secs, Stopwatch.millisecs)
     },
     handleClickStart: function() {
-      // Your Code Here
+      if (!Stopwatch.isRunning) {
+        Stopwatch.start()
+      }
     },
     handleClickStopReset: function(){
       // Your Code Here
     },
     handleClickLap: function(){
-      // Your Code Here
+      //ypouir code here
     }
   };
 
   window.onload = function(){
     // Attach AppController methods to the DOM as event handlers here.
+    $('#start').on('click', function() {
+      AppController.handleClickStart()
+    })
   };
