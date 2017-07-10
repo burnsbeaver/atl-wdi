@@ -3,68 +3,108 @@
 // See LICENSE for details.
 
 /// Data & Core Business Logic ///
-const Stopwatch = {
-  tickClock: function(){
-    if (Stopwatch.isRunning) {
-      setTimeout(Stopwatch.tickClock, 10); // trigger next clock tick
-      Stopwatch.advanceTenMillisecs();
-      AppController.handleClockTick();
+
+  const Stopwatch = {
+    tickClock: function(){
+      if (Stopwatch.isRunning) {
+        setTimeout(Stopwatch.tickClock, 10); // trigger next clock tick
+        Stopwatch.advanceTenMillisecs();
+        AppController.handleClockTick();
+      }
+    },
+    isRunning: false,
+    mins: 0,
+    secs: 0,
+    millisecs: 0,
+    laps: [],
+    // DO NOT EDIT ABOVE THIS LINE
+    advanceTenMillisecs: function(){
+    // Increase the number of milliseconds by 10
+    Stopwatch.millisecs += 10
+    //if the Number of milliseconds is = 1000
+    if (Stopwatch.millisecs === 1000) {
+      //increase seconds by one
+      Stopwatch.secs += 1
+      //reset milliseconds
+      Stopwatch.millisecs = 0
     }
-  },
-  isRunning: false,
-  mins: 0,
-  secs: 0,
-  millisecs: 0,
-  laps: [],
-  // DO NOT EDIT ABOVE THIS LINE
-  advanceTenMillisecs: function(){
-    // Your Code Here
-  },
-  reset: function(){
-    // Your Code Here
-  },
-  start: function(){
-    // Your Code Here
-  },
-  stop: function(){
-    // Your Code Here
-  },
-  lap: function(){
-    // Your Code Here
-  }
-};
+    //if seconds is = 60
+    if (Stopwatch.secs === 60) {
+      Stopwatch.mins += 1
+      //increse minutes by 1
+      Stopwatch.secs = 0
+      //reset seconds
+    }
 
-/// User Interface ///
-const ViewEngine = {
-  updateTimeDisplay: function(mins, secs, millisecs){
-    // Your Code Here
-  },
-  updateLapListDisplay: function(laps){
-    // Your Code Here
-  },
-};
-const ViewHelpers = {
-  zeroFill: function(number, length){
-    // Your Code Here
-  },
-};
+    },
+    reset: function(){
+    // changes minutes, seconds, and milliseconds to 0
+      Stopwatch.mins = 0
+      Stopwatch.secs = 0
+      Stopwatch.millisecs = 0
+    // resets the laps
+      Stopwatch.laps = []
+    },
+    start: function(){
+    // if stopwatch.isrunning === false
+    if (Stopwatch.isRunning === false) {
+      //change stopwatch.isrunning to true
+      Stopwatch.isRunning = true
+      //call the 'tickclock' function
+      Stopwatch.tickClock()
+    }
 
-/// Top-Level Application Code ///
-const AppController = {
-  handleClockTick: function(){
-    // Your Code Here
-  },
-  handleClickStart: function() {
-    // Your Code Here
-  },
-  handleClickStopReset: function(){
-    // Your Code Here
-  },
-  handleClickLap: function(){
-    // Your Code Here
-  }
-};
+    },
+    stop: function(){
+    // if stopwatch.isrunning === true
+    if (Stopwatch.isRunning === true) {
+      Stopwatch.isRunning = false
+      // change it to false (not running)
+      }
+    },
+    lap: function(){
+    // if stopwatch.isrunning === true
+    if (Stopwatch.isRunning === true) {
+      //Push the current value to the laps array
+      Stopwatch.laps.push(`${Stopwatch.mins}: ${Stopwatch.secs}: ${Stopwatch.millisecs}`)
+    }
+    }
+  };
 
-window.onload = function(){
-  // Attach AppController methods to the DOM as event handlers here.
-};
+  /// User Interface ///
+  const ViewEngine = {
+    updateTimeDisplay: function(mins, secs, millisecs){
+
+    },
+    updateLapListDisplay: function(laps){
+      // Your Code Here
+    },
+  };
+  const ViewHelpers = {
+    zeroFill: function(number, length){
+      // turn number into string
+      var numToString = number.toString()
+
+      }
+    },
+  };
+
+  /// Top-Level Application Code ///
+  const AppController = {
+    handleClockTick: function(){
+      
+    },
+    handleClickStart: function() {
+      // Your Code Here
+    },
+    handleClickStopReset: function(){
+      // Your Code Here
+    },
+    handleClickLap: function(){
+      // Your Code Here
+    }
+  };
+
+  window.onload = function(){
+    // Attach AppController methods to the DOM as event handlers here.
+  };
