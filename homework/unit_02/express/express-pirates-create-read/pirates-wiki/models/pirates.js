@@ -1,4 +1,5 @@
-module.exports = [
+module.exports = {
+allPirates: [
 	{
 	  name: 'Anne Bonny',
 	  birthplace: 'Kinsale, Ireland',
@@ -90,4 +91,5 @@ module.exports = [
     base: "England",
 	  nickname: "Captain Kidd"
 	}
-];
+]
+};

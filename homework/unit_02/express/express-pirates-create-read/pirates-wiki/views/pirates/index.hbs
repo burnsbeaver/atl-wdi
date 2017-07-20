@@ -1,0 +1,12 @@
+<h1> We know about {{ pirates.length }} pirates</h1>
+<a href="/pirates/new">Want to add a new pirate to our website?</a>
+<ul>
+  {{#each pirates}}
+    <li>Name: <a href="/pirates/{{@index}}">{{name}}</a></li>
+    <li>Birthplace: <a href="/pirates/{{@index}}">{{birthplace}}</a></li>
+    <li>Year of Death: <a href="/pirates/{{@index}}">{{death_year}}</a></li>
+    <li>Base: <a href="/pirates/{{@index}}">{{base}}</a></li>
+    <li>Nickname: <a href="/pirates/{{@index}}">{{nickname}}</a></li>
+    <br>
+  {{/each}}
+</ul>
