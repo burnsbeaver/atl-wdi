@@ -36,5 +36,10 @@ router.post('/', function(req, res){
   res.redirect('/todos');
 });
 
+router.delete('/:id', function(req, res) {
+  data.seededTodos.splice(req.params.id, 1)
+  res.redirect('/todos')
+})
+
 
 module.exports = router;
