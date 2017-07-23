@@ -4,10 +4,6 @@
 // - Find the cost of a small barrel:
 //   - We know 1 small barrel costs 60 right off the bat
 var barrels = function(small, large, total){
-  var smallBarrel = 60;
-  var largeBarrel = (total - (small * smallBarrel)) / large;
-
-return largeBarrel;
 };
 // - Find the cost of the large barrel:
 //   - First find the cost of all large barrels
