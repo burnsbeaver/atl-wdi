@@ -33,13 +33,25 @@ var seedController = require('./controllers/seeds.js');
 app.use('/seed', seedController);
 
 //for root directory, show all donuts
-var donutsController = require('./controllers/donuts.js');
-app.use('/', donutsController);
+// var donutsController = require('./controllers/donuts.js');
+// app.use('/', donutsController);
 
 //======================
 // LISTENERS
 //======================
 //CONNECT MONGOOSE TO "donut_store"
 
+var db = mongoose.connection;
+
+db.on('error', function(err){
+  console.log(err);
+});
+
+db.once('open', () => {
+  console.log('Database has been connected!')
+})
 
 //CREATE THE MONGOOSE CONNECTION and SET APP TO LISTEN to 3000
+app.listen(3000, () => {
+  console.log('Listening on port 3000')
+})
