@@ -10,15 +10,14 @@ class App extends Component {
     super();
     this.state = {
       movie: '',
-      search: {}
+      search: ''
     }
   }
 
   //Update these methods to make axios calls to OMDB and update this.state.movie with the response from the server
   _searchByTitle = (movie) => {
     console.log("Search by Title");
-    console.log(JSON.stringify(this.state.search.title))
-    axios.get(`http://www.omdbapi.com/?apikey=d31f1a94&t=${JSON.stringify(this.state.search.title)}`)
+    axios.get(`http://www.omdbapi.com/?apikey=d31f1a94&t=${this.state.search}`)
       .then((res) => {
         console.log(res)
         this.setState({
@@ -42,13 +41,13 @@ class App extends Component {
   }
 
   _handleSearchChange = (event) => {
-    const attributeName = event.target.name;
+    // const attributeName = event.target.name;
     const attributeValue = event.target.value;
+    //
+    // const search = {...this.state.search };
+    // search[attributeName] = attributeValue
 
-    const search = {...this.state.search };
-    search[attributeName] = attributeValue
-
-    this.setState({search})
+    this.setState({search: attributeValue})
   }
 
 
