@@ -21,11 +21,7 @@ class Credits extends Component {
             <h3>Account Balance: {this.props.accountBalance}</h3>
             <Link to="/">Home</Link><Link to="/debits">   Debits</Link>
             <h3>New Transaction</h3>
-            <form onSubmit="">
-              <input type="text" name="amount" placeholder="Amount"/>
-              <input type="text" name="description" placeholder="Description"/>
-              <input type="submit" value="Add Credit"/>
-            </form>
+            
             <h2>Credit History</h2>
             {CreditComponent}
           </div>

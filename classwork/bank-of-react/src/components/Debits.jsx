@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import AccountBalance from './AccountBalance';
 import {Link} from 'react-router-dom';
 import Transactions from './Transactions'
+import TransactionForm from './TransactionForm'
 
 class Debits extends Component {
   render() {
@@ -21,11 +22,7 @@ class Debits extends Component {
             <h3>Account Balance: {this.props.accountBalance}</h3>
             <Link to="/">Home</Link><Link to="/credits">   Credits</Link>
             <h3>New Transaction</h3>
-            <form onSubmit={this.props.newDebit}>
-              <input type="text" name="amount" placeholder="Amount"/>
-              <input type="text" name="description" placeholder="Description"/>
-              <input type="submit" value="Add Debit"/>
-            </form>
+            <TransactionForm newDebit={this.props.newDebit} />
             <h2>Debit History</h2>
             {DebitComponent}
           </div>

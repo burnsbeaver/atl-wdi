@@ -31,10 +31,7 @@ class App extends Component {
       })
       .catch(err => console.error(err));
   }
-  _newDebit = (e) => {
 
-    console.log('NEW DEBIT HIT')
-  }
   _getCredits = () => {
     axios.get('/credits')
       .then((res) => {
@@ -42,6 +39,11 @@ class App extends Component {
         console.log(this.state.credits)
       })
   }
+  _newDebit = (newTransaction) => {
+    const debits = [...this.state.debits]
+    debits.push(newTransaction);
+    this.setState({debits})
+  };
 
   _calcAccountBalance = () => {
     const totalCredits = this.state.credits.reduce((totalCredits, credit) => {
