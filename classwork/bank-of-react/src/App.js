@@ -42,7 +42,8 @@ class App extends Component {
   _newDebit = (newTransaction) => {
     const debits = [...this.state.debits]
     debits.push(newTransaction);
-    this.setState({debits})
+    this.setState({debits: debits})
+    this._calcAccountBalance()
   };
 
   _calcAccountBalance = () => {
@@ -51,6 +52,7 @@ class App extends Component {
     }, 0)
 
     const totalDebits = this.state.debits.reduce((totalDebits, debit) => {
+      console.log(debit)
       return totalDebits + debit.amount
     }, 0)
 
@@ -66,9 +68,8 @@ class App extends Component {
 
   render() {
     const accountBalance = this._calcAccountBalance()
-    const newDebit = this._newDebit()
+    const newDebit = this._newDebit
 
-    this._calcAccountBalance()
     const HomeComponent = () => (<Home accountBalance={accountBalance}/>);
     const DebitsComponent = () => (<Debits newDebit={newDebit} debits={this.state.debits} accountBalance={accountBalance}/>)
     const CreditsComponent = () => (<Credits credits={this.state.credits} accountBalance={accountBalance}/>)
