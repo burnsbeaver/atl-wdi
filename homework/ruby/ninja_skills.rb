@@ -20,10 +20,21 @@
 # puts d
 
 # Challege 4
-christine = "Hi, I'm Christine"
-likesTo = "long walks on the beach, kinda."
-tims = "and I like"
-puts "#{christine} #{tims} #{likesTo}"
-g = "2"
-gToNumber = 2
-puts g.to_i + gToNumber
+# christine = "Hi, I'm Christine"
+# likesTo = "long walks on the beach, kinda."
+# tims = "and I like"
+# puts "#{christine} #{tims} #{likesTo}"
+# g = "2"
+# gToNumber = 2
+# puts g.to_i + gToNumber
+
+# Challenge 6
+myFirstArray = []
+myFirstArray = ["a", "b", "c", "d", "e", 1, 2, 3, 4]
+puts myFirstArray.last
+puts myFirstArray.first
+myFirstArray[1] = "Joe"
+myFirstArray[2] = 3
+myFirstArray.push(true)
+puts myFirstArray[4].class
+puts myFirstArray.to_s
