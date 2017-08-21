@@ -29,12 +29,19 @@
 # puts g.to_i + gToNumber
 
 # Challenge 6
-myFirstArray = []
-myFirstArray = ["a", "b", "c", "d", "e", 1, 2, 3, 4]
-puts myFirstArray.last
-puts myFirstArray.first
-myFirstArray[1] = "Joe"
-myFirstArray[2] = 3
-myFirstArray.push(true)
-puts myFirstArray[4].class
-puts myFirstArray.to_s
+# myFirstArray = []
+# myFirstArray = ["a", "b", "c", "d", "e", 1, 2, 3, 4]
+# puts myFirstArray.last
+# puts myFirstArray.first
+# myFirstArray[1] = "Joe"
+# myFirstArray[2] = 3
+# myFirstArray.push(true)
+# puts myFirstArray[4].class
+# puts myFirstArray.to_s
+
+#Challenge 7
+myFavoriteAnimals = {:ted => "Teddy Bear", :edgar => "Donkey", :burns => "Beaver", :wylie => "Dog", :ramsey => "Ram"}
+myFavoriteAnimals[:edgar] = "Bear"
+favoriteMovie = {}
+favoriteMovie[:movie] = "American Psycho"
+puts favoriteMovie
