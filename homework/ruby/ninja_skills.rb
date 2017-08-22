@@ -40,8 +40,34 @@
 # puts myFirstArray.to_s
 
 #Challenge 7
-myFavoriteAnimals = {:ted => "Teddy Bear", :edgar => "Donkey", :burns => "Beaver", :wylie => "Dog", :ramsey => "Ram"}
-myFavoriteAnimals[:edgar] = "Bear"
-favoriteMovie = {}
-favoriteMovie[:movie] = "American Psycho"
-puts favoriteMovie
+# myFavoriteAnimals = {:ted => "Teddy Bear", :edgar => "Donkey", :burns => "Beaver", :wylie => "Dog", :ramsey => "Ram"}
+# myFavoriteAnimals[:edgar] = "Bear"
+# favoriteMovie = {}
+# favoriteMovie[:movie] = "American Psycho"
+# puts favoriteMovie
+
+# Challenge 8
+firstRange = (1..10)
+firstRange.to_a
+secondRange = (1...1000)
+# firstRange.each do |number|
+#   puts number
+# end
+# x = 0
+# while x < 50
+#   print secondRange[x]
+#   x += 1
+# end
+# newArray = []
+# firstRange.each do |number|
+#   newArray.push(number * 2)
+# end
+# puts newArray
+oddStrings = firstRange.map do |number|
+  if number.odd?
+    number.to_s
+  else
+    number
+  end
+end
+puts oddStrings.to_s
